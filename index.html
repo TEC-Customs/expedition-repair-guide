@@ -3,158 +3,70 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#12314a">
-<meta name="description" content="A simple repair plan and parts quote for Jen's 2016 Ford Expedition.">
-<title>Jen's Expedition | Parts & Repair Plan</title>
+<meta name="theme-color" content="#102c43">
+<meta name="description" content="Catalytic converter options and Ford parts quote for a 2016 Ford Expedition 3.5L EcoBoost.">
+<title>Jen's Expedition | Catalytic Converters</title>
 <style>
-:root{--ink:#172c3a;--muted:#576b79;--blue:#1767bf;--navy:#12314a;--line:#e1e8ef;--bg:#f4f7fa;--white:#fff;--danger:#b74331;--warnbg:#fff5ea;--green:#26764d}
+:root{--ink:#142c3e;--muted:#536779;--navy:#102c43;--blue:#135caa;--bg:#f5f7fa;--line:#dfe6ed;--green:#1c6e48;--red:#a13d2e;--orange:#85551d}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.55}
-a{color:var(--blue);text-decoration-thickness:1.5px;text-underline-offset:3px}
-button{font:inherit;cursor:pointer}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-.top{background:var(--navy);color:white}
-.topinner{padding-top:24px;padding-bottom:40px}
-.brandrow{display:flex;justify-content:space-between;align-items:center;gap:18px}
-.brand{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem}
-.date{color:#bfd4e3;font-size:.82rem}
-.kicker{display:inline-block;margin-top:36px;color:#a5d4ff;text-transform:uppercase;letter-spacing:.14em;font-size:.79rem;font-weight:800}
-h1{font-size:clamp(2.3rem,7.5vw,4.35rem);line-height:1.06;letter-spacing:-.053em;margin:12px 0 16px;max-width:760px}
-.lede{max-width:650px;margin:0;color:#d9e8f2;font-size:1.1rem}
-.vehicle{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.vehicle span{border:1px solid #50758d;color:#eff8fe;padding:7px 12px;border-radius:30px;font-size:.84rem}
-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:15px;padding-bottom:15px}
-nav .links{display:flex;gap:18px;flex-wrap:wrap}
-nav a{font-size:.91rem;font-weight:700;text-decoration:none;color:#25475f}
-nav button{border:1px solid #cbd7e3;background:white;color:#294860;border-radius:9px;padding:7px 13px;font-weight:700;font-size:.85rem}
-main{padding-bottom:40px}
-.warning{background:var(--warnbg);border:1px solid #f0d5b9;border-left:5px solid #d26843;border-radius:14px;padding:20px 23px;margin:18px 0 30px;display:flex;gap:16px;align-items:flex-start}
-.warning .icon{flex:0 0 38px;height:38px;background:#ffe5c7;border-radius:12px;display:grid;place-items:center;color:#a34b24;font-size:1.2rem;font-weight:900}
-.warning strong{display:block;font-size:1.1rem;line-height:1.35;margin-bottom:6px}
-.warning p{margin:0;color:#675142}
-.section{margin:34px 0}
-.sectionhead{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 17px;flex-wrap:wrap}
-.eyebrow{text-transform:uppercase;color:#537188;font-size:.74rem;font-weight:800;letter-spacing:.13em;margin-bottom:5px}
-h2{font-size:clamp(1.55rem,4vw,2rem);margin:0;letter-spacing:-.03em;line-height:1.18}
-.note{font-size:.89rem;color:var(--muted);margin:0}
-.stats{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:14px}
-.stat{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;min-width:0}
-.stat.main{border-top:4px solid var(--blue)}
-.stat .label{color:var(--muted);font-weight:700;font-size:.84rem}
-.stat .number{font-size:clamp(1.65rem,4vw,2.4rem);font-weight:850;letter-spacing:-.045em;line-height:1.16;margin:9px 0 7px;font-variant-numeric:tabular-nums}
-.stat p{color:var(--muted);font-size:.82rem;line-height:1.4;margin:0}
-.panel{background:white;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 5px 20px rgba(25,54,77,.035)}
-.panelhead{padding:22px 25px;border-bottom:1px solid var(--line)}
-.panelhead h3{margin:0 0 5px;font-size:1.2rem}
-.panelhead p{margin:0;color:var(--muted);font-size:.89rem}
-.part{display:grid;grid-template-columns:minmax(0,1fr) 75px 100px 95px;gap:16px;align-items:center;padding:18px 25px;border-bottom:1px solid var(--line)}
-.part.heading{padding-top:10px;padding-bottom:10px;background:#f9fbfd;color:#667b88;font-size:.73rem;text-transform:uppercase;letter-spacing:.07em;font-weight:800}
-.part .name{font-weight:750}
-.part .sku{display:block;color:var(--muted);font-size:.88rem;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;margin-top:2px}
-.part .money{font-weight:850;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
-.part .qty{text-align:center;color:var(--muted)}
-.part .stock{text-align:center;color:#a45120;font-size:.82rem;font-weight:750;background:#fff2e8;border-radius:999px;padding:5px 0}
-.part .stock.ok{color:var(--green);background:#e9f7ee}
-.totalbar{padding:23px 25px;background:#edf5ff;display:flex;align-items:center;justify-content:space-between;gap:14px}
-.totalbar .label{font-weight:800}
-.totalbar .value{font-size:1.9rem;letter-spacing:-.04em;font-weight:850;font-variant-numeric:tabular-nums}
-.subnote{padding:18px 25px;color:var(--muted);font-size:.89rem;line-height:1.5}
-.subnote p{margin:0 0 8px}.subnote p:last-child{margin-bottom:0}
-.options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.option{background:white;border:1px solid var(--line);border-radius:15px;padding:21px;display:flex;flex-direction:column;gap:9px}
-.badge{display:inline-flex;align-items:center;align-self:flex-start;padding:5px 10px;border-radius:30px;background:#e6f6ed;color:#1c7042;font-size:.73rem;font-weight:800;letter-spacing:.02em}
-.badge.bad{background:#fceae5;color:#a53e2b}
-.badge.unknown{background:#fdf0de;color:#87541f}
-.option h3{margin:4px 0 0;font-size:1.16rem;line-height:1.24}
-.option .cost{font-size:1.48rem;font-weight:850;letter-spacing:-.03em}
-.option .cost small{font-weight:500;color:var(--muted);font-size:.8rem;letter-spacing:0}
-.option p{color:var(--muted);font-size:.89rem;line-height:1.45;margin:0;flex-grow:1}
-.option a{font-size:.86rem;font-weight:750}
-.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.step{background:white;border:1px solid var(--line);border-radius:15px;padding:22px}
-.step .num{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#e8f2fc;color:#1767bf;font-weight:850;margin-bottom:9px}
-.step h3{font-size:1.1rem;margin:0 0 7px}
-.step p{margin:0;font-size:.91rem;color:var(--muted)}
-.filter{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;padding:24px}
-.filter h3{font-size:1.2rem;margin:0 0 5px}.filter p{color:var(--muted);margin:0;font-size:.91rem}
-.filterprices{text-align:right}
-.filterprices strong{display:block;font-size:1.7rem;letter-spacing:-.03em;white-space:nowrap}
-.filterprices small{color:var(--muted);display:block;font-size:.83rem}
-.filterlinks{margin-top:12px;display:flex;flex-wrap:wrap;gap:13px}
-.filterlinks a{font-size:.85rem}
-.details{background:white;border:1px solid var(--line);border-radius:14px;margin-top:12px;padding:0 20px}
-.details summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:800}
-.details summary::after{content:"+";float:right;font-size:1.35rem;color:#6c8497;line-height:1}
-.details[open] summary::after{content:"−"}
-.details p{margin:0 0 16px;font-size:.9rem;color:var(--muted)}
-footer{border-top:1px solid #dae2ea;padding:24px 0 42px;color:#657987;font-size:.82rem}
-footer strong{color:#294557}
-@media(max-width:760px){.wrap{padding-left:16px;padding-right:16px}.topinner{padding-top:19px;padding-bottom:32px}.kicker{margin-top:26px}.stats{grid-template-columns:1fr 1fr}.stat.main{grid-column:1 / -1}.options{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.part{grid-template-columns:minmax(0,1fr) 80px;gap:8px 14px;padding:17px}.part.heading{display:none}.part .money{grid-column:2;grid-row:1}.part .qty{grid-column:1;text-align:left;font-size:.83rem}.part .qty::before{content:"Qty: "}.part .stock{grid-column:2;text-align:center}.totalbar{padding:20px 17px}.panelhead,.subnote{padding-left:17px;padding-right:17px}.filter{grid-template-columns:1fr}.filterprices{text-align:left}}
-@media(max-width:430px){nav .links{gap:11px}nav a{font-size:.84rem}.stat{padding:17px}.warning{padding:15px;gap:10px}.warning .icon{flex-basis:30px;height:30px}.totalbar .value{font-size:1.55rem}}
-@media print{body{background:white}nav,nav button{display:none!important}.top{color:#122d40;background:white}.top .lede,.top .kicker,.date{color:#122d40}.vehicle span{color:#122d40;border-color:#999}.panel,.step,.stat,.option,.warning{box-shadow:none;break-inside:avoid}.section{break-inside:avoid}.wrap{max-width:100%;padding:0 12px}}
+body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;background:var(--bg);color:var(--ink)}
+a{color:var(--blue);text-underline-offset:3px}
+.wrap{max-width:860px;margin:auto;padding-left:20px;padding-right:20px}
+header{background:var(--navy);color:white;padding:32px 0 34px}
+header .brand{font-size:.78rem;font-weight:800;letter-spacing:.15em;color:#b5d6ec}
+header h1{font-size:clamp(2rem,7vw,3.4rem);line-height:1.12;margin:17px 0 10px;letter-spacing:-.05em}
+header p{margin:0;color:#d2e1ee}
+main{padding-top:24px;padding-bottom:45px}
+h2{font-size:1.5rem;letter-spacing:-.035em;line-height:1.2;margin:0 0 9px}
+.caption{font-size:.87rem;color:var(--muted);margin:0 0 18px}
+section{margin-bottom:28px}
+.card{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.pricehero{padding:23px 25px;background:#e8f2fd;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pricehero span{font-weight:800}
+.pricehero strong{font-size:clamp(1.8rem,5vw,2.3rem);white-space:nowrap;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.item{padding:19px 25px;display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:start;border-top:1px solid var(--line)}
+.item strong{display:block}
+.item code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.9rem;color:var(--muted);white-space:nowrap}
+.item .price{font-weight:850;font-size:1.14rem;white-space:nowrap}
+.item small{display:block;font-size:.84rem;color:#985723;margin-top:4px}
+.meta{background:#f8fafc;border-top:1px solid var(--line);padding:17px 25px;font-size:.9rem;color:var(--muted)}
+.meta p{margin:0 0 8px}.meta p:last-child{margin:0}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.option{border:1px solid var(--line);background:#fff;border-radius:15px;padding:21px;display:flex;flex-direction:column;gap:10px}
+.badge{display:inline-flex;align-self:flex-start;border-radius:99px;padding:5px 11px;font-size:.76rem;font-weight:800}
+.badge.green{background:#e4f4ea;color:var(--green)}
+.badge.red{background:#ffeae5;color:var(--red)}
+.option h3{font-size:1.14rem;line-height:1.2;margin:0}
+.option p{color:var(--muted);font-size:.91rem;margin:0;flex:1}
+.option .value{font-size:1.25rem;font-weight:850}
+.option a{font-weight:750;font-size:.9rem}
+.footnote{font-size:.86rem;color:var(--muted);margin:12px 0 0}
+footer{border-top:1px solid var(--line);padding:20px 0 32px;font-size:.82rem;color:var(--muted)}
+@media(max-width:650px){.compare{grid-template-columns:1fr}.wrap{padding-left:16px;padding-right:16px}.pricehero{padding:18px;align-items:flex-start;flex-wrap:wrap}.item{padding:18px}.meta{padding:16px}.option{padding:18px}}
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap topinner">
-  <div class="brandrow"><div class="brand">TEC Customs</div><div class="date">Updated Nov 10, 2026</div></div>
-  <div class="kicker">Vehicle repair &amp; parts estimate</div>
-  <h1>Jen's Expedition</h1>
-  <p class="lede">A clear look at what's wrong, what the parts cost, and what we need to fix first.</p>
-  <div class="vehicle"><span>2016 Ford Expedition</span><span>3.5L EcoBoost</span><span>VIN ending F36700</span></div>
-</div></header>
-<nav class="wrap" aria-label="Page sections"><div class="links"><a href="#prices">Ford prices</a><a href="#choices">Other options</a><a href="#plan">Repair plan</a><a href="#filter">Air filter</a></div><button onclick="window.print()" type="button">Print / Save</button></nav>
+<header><div class="wrap"><div class="brand">TEC CUSTOMS · FOR JEN</div><h1>Catalytic converters</h1><p>2016 Ford Expedition · 3.5L EcoBoost · VIN ending F36700</p></div></header>
 <main class="wrap">
-  <div class="warning" role="note"><div class="icon">!</div><div><strong>Important: Fix the misfire before buying converters.</strong><p>Cylinder 2 misfired again during the road test, and the check-engine light flashed. Driving it this way can damage new catalytic converters. The reason for the misfire still needs to be found.</p></div></div>
-  <section class="section" id="prices">
-    <div class="sectionhead"><div><div class="eyebrow">Ford dealership quote</div><h2>Here's what the Ford parts cost.</h2></div><p class="note">From Tim's RepairLink cart · Nov 10</p></div>
-    <div class="stats">
-      <div class="stat main"><div class="label">Both converters + 2 gaskets</div><div class="number">$2,231.23</div><p>Ford list pricing, before tax, shipping, labor or employee discount.</p></div>
-      <div class="stat"><div class="label">Core deposits shown</div><div class="number">$1,000</div><p>$500 per converter. Tim may be able to avoid paying this upfront; the old parts must be returned.</p></div>
-      <div class="stat"><div class="label">Converter availability</div><div class="number">0 shown</div><p>Both converters show zero in this RepairLink quote. Other dealer stock has not been checked.</p></div>
-    </div>
-    <div class="panel" style="margin-top:14px">
-      <div class="panelhead"><h3>Exact Ford parts list</h3><p>These are the items shown in the VIN-selected Ford cart.</p></div>
-      <div class="part heading"><div>Part</div><div style="text-align:center">Quantity</div><div style="text-align:right">Price</div><div style="text-align:center">Stock</div></div>
-      <div class="part"><div><div class="name">Catalytic converter</div><span class="sku">FL1Z-5E212-C</span></div><div class="qty">1</div><div class="money">$1,206.86</div><div class="stock">0 shown</div></div>
-      <div class="part"><div><div class="name">Catalytic converter</div><span class="sku">FL1Z-5E212-A</span></div><div class="qty">1</div><div class="money">$961.71</div><div class="stock">0 shown</div></div>
-      <div class="part"><div><div class="name">Exhaust gaskets</div><span class="sku">BL3Z-9450-A · $31.33 each</span></div><div class="qty">2</div><div class="money">$62.66</div><div class="stock ok">5 shown</div></div>
-      <div class="totalbar"><div class="label">Parts subtotal</div><div class="value">$2,231.23</div></div>
-      <div class="subnote"><p><strong>About the core charge:</strong> If the dealer charges both $500 deposits upfront, the displayed parts-plus-core amount would be <strong>$3,231.23</strong> before tax and other costs. Tim's work arrangement may waive those deposits if both old converters are returned.</p><p><strong>Still to confirm:</strong> Tim's actual employee price, the delivery date for both converters, and whether any additional one-time-use installation hardware is needed.</p></div>
-    </div>
-  </section>
-  <section class="section" id="choices">
-    <div class="sectionhead"><div><div class="eyebrow">Compare the choices</div><h2>Which converters can be used in California?</h2></div></div>
-    <div class="options">
-      <article class="option"><span class="badge">California legal · OEM</span><h3>Ford original equipment</h3><div class="cost">$2,231.23 <small>with gaskets</small></div><p>Correct Ford replacements from the VIN-selected quote. Availability currently shows zero for both. Employee pricing still needs to be checked.</p><a href="#prices">View the Ford part numbers</a></article>
-      <article class="option"><span class="badge unknown">CARB option · verify fitment</span><h3>MagnaFlow direct-fit</h3><div class="cost">Price unavailable</div><p>Part numbers <strong>6551428</strong> and <strong>6551528</strong>. Previously shown sold out. Must match the underhood engine-family label and approved CARB application before ordering.</p><a href="https://www.magnaflow.com/products/6551428-magnaflow-2015-2017-ford-expedition-3-5l-2015-2017-lincoln-navigator-3-5l-california-grade-carb-compliant-direct-fit-catalytic-converter-6551428" target="_blank" rel="noopener">See MagnaFlow example</a></article>
-      <article class="option"><span class="badge bad">Not California legal</span><h3>JC Whitney Federal-only pair</h3><div class="cost">$309.99 <small>advertised</small></div><p>Set <strong>SET-JRF96030003</strong>. The listing is for bolt-in Federal/EPA converters. They are not an acceptable California replacement even if shipped to another state.</p><a href="https://www.carparts.com/details/catalytic-converter/jc-whitney/set-jrf96030003" target="_blank" rel="noopener">See Federal-only example</a></article>
-    </div>
-    <p class="note" style="margin-top:12px">Prices are earlier advertised snapshots, not checkout guarantees. Any aftermarket California converter needs a matching CARB approval for this exact vehicle and engine family.</p>
-  </section>
-  <section class="section" id="plan">
-    <div class="sectionhead"><div><div class="eyebrow">What's happening with the truck</div><h2>The repair plan, in order.</h2></div></div>
-    <div class="steps">
-      <article class="step"><span class="num">1</span><h3>Find cylinder 2's misfire</h3><p>The check-engine light flashed during the road test. The spark plug was swapped with cylinder 4 and the misfire stayed on cylinder 2. The coil and boot have <strong>not been confirmed swapped</strong>. Check them, then the injector, wiring and compression as needed. Avoid more loaded driving while it's misfiring.</p></article>
-      <article class="step"><span class="num">2</span><h3>Confirm converter damage</h3><p>Code <strong>P0430</strong> points to low catalyst efficiency on bank 2. Tim also heard a rattle when checking the converters. Confirm both units are damaged and check for exhaust leaks before ordering two replacements.</p></article>
-      <article class="step"><span class="num">3</span><h3>Keep an eye on the throttle body</h3><p>Code <strong>P2112</strong> means the throttle was reported stuck closed. The FORScan drive log looked normal, but an intermittent issue can return. Ford bulletin 16-0139 may apply depending on build date and other codes.</p></article>
-      <article class="step"><span class="num">4</span><h3>Install parts, then check smog readiness</h3><p>After the misfire is repaired and the right converters are available, install the needed parts, clear eligible faults, finish the readiness monitors, and confirm it is ready for a legitimate California smog inspection.</p></article>
-    </div>
-  </section>
-  <section class="section" id="filter">
-    <div class="sectionhead"><div><div class="eyebrow">Additional maintenance</div><h2>Engine air filter</h2></div></div>
-    <div class="panel filter">
-      <div><h3>Motorcraft FA-1883</h3><p>Ford number <strong>7C3Z-9601-A</strong>. Add one engine air filter to the parts plan. This is a separate item and is <strong>not included</strong> in the $2,231.23 Ford quote.</p><div class="filterlinks"><a href="https://business.walmart.com/ip/Motorcraft-Air-Filter-FA1883/33678519" target="_blank" rel="noopener">Walmart listing</a><a href="https://www.autozone.com/filters-and-pcv/air-filter/ford/expedition/b/brand/motorcraft" target="_blank" rel="noopener">AutoZone listing</a></div></div>
-      <div class="filterprices"><strong>$23–$30</strong><small>Earlier public price range</small><small>Check live price and stock</small></div>
-    </div>
-  </section>
-  <section class="section" aria-label="More information">
-    <div class="sectionhead"><div><div class="eyebrow">Extra details</div><h2>Questions that might come up</h2></div></div>
-    <details class="details"><summary>Why not just buy the $309.99 converters?</summary><p>They are listed for Federal/EPA use and are not approved for California. Shipping them to Arizona does not change California installation and smog requirements. <a href="https://www.bar.ca.gov/catalytic-converter-theft" target="_blank" rel="noopener">California BAR guidance</a>.</p></details>
-    <details class="details"><summary>Does the P0430 code mean both converters are bad?</summary><p>No. The November 7 diagnostic report showed P0430 for bank 2, and did not show a current P0420 for bank 1. The reported rattling suggests physical damage, but both converters should be checked before spending money on the pair.</p></details>
-    <details class="details"><summary>What is the Ford throttle-body bulletin?</summary><p>Ford TSB 16-0139 addresses certain intermittent P2112 throttle-body faults on vehicles including the 2016 Expedition built on or before May 31, 2016. It has specific diagnostic conditions and exclusions. Jen's build date has not been verified here; the bulletin does not explain the cylinder 2 misfire by itself.</p></details>
-  </section>
+<section aria-labelledby="ford-heading">
+<h2 id="ford-heading">Ford original converters</h2>
+<p class="caption">Exact part numbers and list prices shown in the Ford RepairLink cart on November 10, 2026.</p>
+<div class="card">
+<div class="pricehero"><span>Both Ford converters</span><strong>$2,168.57</strong></div>
+<div class="item"><div><strong>Ford catalytic converter</strong><code>FL1Z-5E212-C</code><small>Quantity 1 · Availability: 0 shown</small></div><div class="price">$1,206.86</div></div>
+<div class="item"><div><strong>Ford catalytic converter</strong><code>FL1Z-5E212-A</code><small>Quantity 1 · Availability: 0 shown</small></div><div class="price">$961.71</div></div>
+<div class="meta"><p><strong>Core deposits:</strong> $500 each ($1,000 total). Tim may be able to avoid paying these upfront through work, but both old converters must be returned.</p><p><strong>Ford price with two gaskets:</strong> $2,231.23 ($62.66 for two BL3Z-9450-A gaskets). This does not include tax, shipping, labor or employee discount.</p><p><strong>Availability:</strong> RepairLink shows zero for both converters. Actual stock and employee pricing still need to be confirmed.</p></div>
+</div>
+</section>
+<section aria-labelledby="options-heading">
+<h2 id="options-heading">Other bolt-in converters</h2>
+<p class="caption">California-approved parts must match the vehicle's emissions label and approved application.</p>
+<div class="compare">
+<article class="option"><span class="badge green">California-compliant option</span><h3>MagnaFlow direct-fit</h3><div class="value">Price unavailable</div><p>Parts <strong>6551428</strong> and <strong>6551528</strong>. Previously shown sold out. Check CARB approval and exact engine-family fitment before ordering.</p><a href="https://www.magnaflow.com/products/6551428-magnaflow-2015-2017-ford-expedition-3-5l-2015-2017-lincoln-navigator-3-5l-california-grade-carb-compliant-direct-fit-catalytic-converter-6551428" target="_blank" rel="noopener noreferrer">MagnaFlow 6551428</a><a href="https://www.magnaflow.com/products/6551528-magnaflow-2015-2017-ford-expedition-3-5l-2015-2017-lincoln-navigator-3-5l-california-grade-carb-compliant-direct-fit-catalytic-converter-6551528" target="_blank" rel="noopener noreferrer">MagnaFlow 6551528</a></article>
+<article class="option"><span class="badge red">Not California legal</span><h3>JC Whitney Federal-only pair</h3><div class="value">$309.99 listed</div><p>Set <strong>SET-JRF96030003</strong>. These bolt-in converters are listed for Federal/EPA applications and are not legal California replacements, regardless of where they are shipped.</p><a href="https://www.carparts.com/details/catalytic-converter/jc-whitney/set-jrf96030003" target="_blank" rel="noopener noreferrer">CarParts.com listing</a></article>
+</div>
+<p class="footnote">Prices and availability are previously checked listings and can change. Before purchasing, verify the correct parts and California emissions requirements. <a href="https://www.bar.ca.gov/catalytic-converter-theft" target="_blank" rel="noopener noreferrer">California BAR guidance</a>.</p>
+</section>
 </main>
-<footer><div class="wrap"><strong>TEC Customs</strong> · Repair information for Jen<br>Parts prices and stock are from the RepairLink screenshot dated November 10, 2026. Diagnostic notes reflect Tim's tests and the November 7 scan. No parts ordered.</div></footer>
-</body>
-</html>
+<footer><div class="wrap">TEC Customs · Catalytic converter price comparison · Updated November 10, 2026</div></footer>
+</body></html>
